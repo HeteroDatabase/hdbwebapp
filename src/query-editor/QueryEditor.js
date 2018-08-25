@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { executeScript } from '../backend-apis/QueryEditorAPIs.js';
+import { callExecuteScriptAPI } from '../backend-apis/QueryEditorAPIs.js';
 
 class QueryEditor extends React.Component {
 
@@ -22,9 +22,9 @@ class QueryEditor extends React.Component {
 		this.setState({queryScriptText: e.target.value});
 	}
 
-	executeScriptSuccessHandler(response) {
-		console.log("Response: " + response);
-		this.setState({scriptExecutedStatus : response});
+	executeScriptSuccessHandler(responseBody) {
+		console.log("Response: " + responseBody);
+		this.setState({scriptExecutedStatus : responseBody});
 	}
 
 	executeScript(e) {
@@ -34,7 +34,7 @@ class QueryEditor extends React.Component {
 			script : this.state.queryScriptText,
 			databaseType : this.state.dataSourceSelected
 		};
-		executeScript(queryData,this.executeScriptSuccessHandler);
+		callExecuteScriptAPI(queryData,this.executeScriptSuccessHandler);
 	}
 
 	render() {
