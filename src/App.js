@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import { PageHeader } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
 
-import { PageHeader } from 'react-bootstrap';
+import Body from "./components/body";
 
-import './App.css';
-import Body from './Body.js';
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends Component {
-  
   headerStyles = {
-	  align : 'left'
+    align: "left"
   };
 
   render() {
     return (
       <div className="App">
-        <PageHeader className='main-header'>
-          	Hetero-DB
-        </PageHeader>
-	<hr />
+        <ToastContainer />
+        <PageHeader className="main-header">Hetero-DB</PageHeader>
+        <hr />
         <div className="main-body">
           <Body />
         </div>
