@@ -1,12 +1,16 @@
-const API_EXECUTE_QUERY='http://192.168.99.1:8083/mds/executeQuery';
+const API_EXECUTE_QUERY='http://localhost:8083/mds/executeQuery';
 
-export function executeScript(queryData,successHandler) {
+export function callExecuteScriptAPI(queryData,successHandler) {
 	console.log(queryData);
 	fetch(API_EXECUTE_QUERY, {
 		method: 'post',
-		body : queryData,
+		body : JSON.stringify(queryData),
 		headers: {
-			'content-type' : 'application/json'
+			'Content-Type' : 'application/json'
 		},
-	}).then(successHandler);
+	}).then(response => response.json())
+	.then(successHandler)
+	.catch(function(error) {
+		console.log("Error in executeScript API call");
+	});
 }
