@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, FormGroup, FormControl} from 'react-bootstrap';
 
 import { callExecuteScriptAPI } from '../backend-apis/QueryEditorAPIs.js';
 
@@ -39,14 +40,23 @@ class QueryEditor extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<textarea name="queryEditorTextarea" onChange={this.handleTextAreaChange}/>
-				<button onClick={this.executeScript}>Run</button>
+			<form>
+				<FormGroup controlId="queryEditorTextArea">
+					<FormControl componentClass="textarea" 
+						placeholder="Enter the script here..."
+						value={this.state.queryScriptText}
+						onChange={this.handleTextAreaChange}
+					/>
+				</FormGroup>
+
+				<br />
+					
+				<Button bsStyle="danger" onClick={this.executeScript}>Run</Button>
 				{
 					this.state.scriptExecutedStatus===true &&
 					<h1>Script Executed Successfully</h1>
 				}
-			</div>
+			</form>
 		);
 	}
 }

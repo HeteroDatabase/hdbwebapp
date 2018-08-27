@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+
+import { PageHeader } from 'react-bootstrap';
+
 import './App.css';
 import Body from './Body.js';
 
 class App extends Component {
+  
+  headerStyles = {
+	  align : 'left'
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Hetero-DB</h1>
-        </header>
+        <PageHeader className='main-header'>
+          	Hetero-DB
+        </PageHeader>
+	<hr />
         <div className="main-body">
           <Body />
         </div>

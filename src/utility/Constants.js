@@ -1,0 +1,1 @@
+export const BACKEND_BASE_URL = "http://10.6.14.91:8083/mds";
