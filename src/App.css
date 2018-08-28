@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -20,6 +19,11 @@
 
 .App-intro {
   font-size: large;
+}
+
+.main-header {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
