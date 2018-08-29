@@ -9,7 +9,7 @@ axios.interceptors.response.use(null, error => {
     error.response.status < 500;
   if (!expectedError) {
     logger.log(error);
-    toast("Something Failed");
+    toast.error("Something Failed");
   }
 
   return Promise.reject(error);

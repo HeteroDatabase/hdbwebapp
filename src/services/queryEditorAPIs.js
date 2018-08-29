@@ -8,8 +8,8 @@ export function callExecuteScriptAPI(queryData, successHandler) {
   let headers = {
     "Content-Type": "application/json"
   };
-  //return http.post(API_EXECUTE_QUERY, queryData, headers);
+  return http.post(API_EXECUTE_QUERY, queryData, headers);
 
   // Since I dont have the backend set up. Im hitting a generic placeholder
-  return http.get("https://jsonplaceholder.typicode.com/posts");
+  //return http.get("https://jsonplaceholder.typicode.com/posts");
 }
